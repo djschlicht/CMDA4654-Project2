@@ -1,6 +1,6 @@
 ---
 title: "Generalized Additive Models (GAMs)"
-subtitle: "CMDA 4654 Project2"
+subtitle: "CMDA 4654 Project 2"
 author: "Group 19: Brady Bolton, Eryk Jesse, Charles Lee, Dan Schlicht"
 output: 
   beamer_presentation:
@@ -13,19 +13,32 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Slide Title
+## Generalized Additive Models
 
-## Slide Title w/ Bullets
+- Math stuff
 
-- bullet 1
-- bullet 2
+## When to Use & Why
 
-## Slide Title w/ Code
+## Example 1 - iris
 
 ```{r}
 data("iris")
 ```
 
+## Example 2 - mtcars
 
+```{r}
+data("mtcars")
+```
+
+## Bigger Example - Health Data
+```{r}
+# df <- read.csv('data/health_data.csv')
+
+```
+
+## Conclusions
+
+- Useful Libraries
 
 ## References
