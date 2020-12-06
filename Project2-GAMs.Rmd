@@ -26,10 +26,30 @@ knitr::opts_chunk$set(echo = TRUE)
 data("iris")
 ```
 
+## Example - iris
+```{r}
+# Set up iris model
+```
+
+## Example - iris
+```{r}
+# iris model graph or whatever
+```
+
 ## Example - mtcars
 
 ```{r}
 data("mtcars")
+```
+
+## Example - mtcars
+```{r}
+# Set up mtcars model
+```
+
+## Example - mtcars
+```{r}
+# mtcars model graph or whatever
 ```
 
 ## Example - Health Data
