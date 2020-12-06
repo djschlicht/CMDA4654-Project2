@@ -15,65 +15,58 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Generalized Additive Models
+<!-- Numbers after slides are 0 indexed (title slide is slide 0) -->
+## Generalized Additive Models <!-- 1 -->
+<!--
+Stuff to include:
+  - Background/history (1 slide)
+  - Math derivation
+  - When to use
+  - Why to use (advantages/disadvantages over other models, etc)
+-->
+## Generalized Additive Models <!-- 2 -->
+## Generalized Additive Models <!-- 3 -->
+## Generalized Additive Models <!-- 4 -->
+## Generalized Additive Models <!-- 5 -->
+## Generalized Additive Models <!-- 6 -->
+## Generalized Additive Models <!-- 7 -->
+## Generalized Additive Models <!-- 8 -->
+## Generalized Additive Models <!-- 9 -->
 
-- Background (brief)
-- Math stuff
-
-$g(\operatorname {E}(Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{m}(x_{m})$
-
-## When to Use & Why
-
-## Example - iris
-
+## Example - iris <!-- 10 -->
 ```{r}
 data("iris")
 ```
+## Example - iris <!-- 11 -->
+## Example - iris <!-- 12 -->
+## Example - iris <!-- 13 -->
 
-## Example - iris
-```{r}
-# Set up iris model
-```
-
-## Example - iris
-```{r}
-# iris model graph or whatever
-```
-
-## Example - mtcars
-
+## Example - mtcars <!-- 14 -->
 ```{r}
 data("mtcars")
 ```
+## Example - mtcars <!-- 15 -->
+## Example - mtcars <!-- 16 -->
+## Example - mtcars <!-- 17 -->
 
-## Example - mtcars
-```{r}
-# Set up mtcars model
-```
-
-## Example - mtcars
-```{r}
-# mtcars model graph or whatever
-```
-
-## Example - Health Data
+## Example - Health Data <!-- 18 -->
 ```{r}
 # df <- read.csv('health_data.csv')
  # show the data
 ```
+## Example - Health Data <!-- 19 -->
+## Example - Health Data <!-- 20 -->
+## Example - Health Data <!-- 21 -->
+## Example - Health Data <!-- 22 -->
+## Example - Health Data <!-- 23 -->
 
-## Example - Health Data
-```{r}
-# create the model
-```
+## Conclusion <!-- 24 -->
+<!-- 
+Stuff to Include:
+  - Furthur reading
+  - Summary of useful libraries
+-->
+## Conclusion <!-- 25 -->
+## Conclusion <!-- 26 -->
 
-## Example - Health Data
-```{r}
-# show some graphs or whatever
-```
-
-## Conclusions
-
-- Useful Libraries
-
-## References
+## References <!-- 27 -->
