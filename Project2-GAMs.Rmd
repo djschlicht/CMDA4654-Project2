@@ -18,6 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 - Background (brief)
 - Math stuff
 
+$g(\operatorname {E}(Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{m}(x_{m})$
+
 ## When to Use & Why
 
 ## Example - iris
