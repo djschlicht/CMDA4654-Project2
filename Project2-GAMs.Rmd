@@ -20,21 +20,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## When to Use & Why
 
-## Example 1 - iris
+## Example - iris
 
 ```{r}
 data("iris")
 ```
 
-## Example 2 - mtcars
+## Example - mtcars
 
 ```{r}
 data("mtcars")
 ```
 
-## Bigger Example - Health Data
+## Example - Health Data
 ```{r}
-# df <- read.csv('data/health_data.csv')
+# df <- read.csv('health_data.csv')
 
 ```
 
