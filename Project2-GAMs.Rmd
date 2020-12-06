@@ -55,39 +55,27 @@ $g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{
 The main package used for GAMs is mgcv.
 !['mgcv'](mgcv.png)
 
-## Example - iris <!-- 10 -->
-```{r, include=FALSE}
-library(mgcv)
-library(ggplot2)
-```
-\small
-```{r}
-data("iris")
-```
-
-## Example - iris <!-- 11 -->
-## Example - iris <!-- 12 -->
-## Example - iris <!-- 13 -->
-
-## Example - mtcars <!-- 14 -->
+## Example - mtcars
 <!-- Wrap pred terms in s() for splines with wigglieness controlled by k argument -->
 \tiny
 ```{r}
+library(mgcv)
 data("mtcars")
 mtcars_gam <- 
   gam(mpg ~ s(disp), data = mtcars, method = "REML")
 summary(mtcars_gam)
 ```
 
-## Example - mtcars <!-- 15 -->
+## Example - mtcars 
 \tiny
 ```{r, fig.height=4}
+library(ggplot2)
 ggplot(data = mtcars, aes(x = disp, y = mpg)) +
   theme_bw() + geom_point() +
   geom_smooth(method = "gam", formula = y ~ s(x)) 
 ```
 
-## Example - mtcars <!-- 16 -->
+## Example - mtcars 
 \tiny
 ```{r, echo=FALSE}
 par(mfrow = c(2,2))
@@ -95,26 +83,36 @@ par(mfrow = c(2,2))
 ```{r, fig.height=4.5}
 gam.check(mtcars_gam)
 ```
-## Example - mtcars <!-- 17 -->
+## Example - mtcars
 
-## Example - Health Data <!-- 18 -->
+## Example - iris
+\small
+```{r}
+data("iris")
+```
+
+## Example - iris
+## Example - iris 
+## Example - iris 
+
+## Example - Health Data
 ```{r}
 # df <- read.csv('health_data.csv')
  # show the data
 ```
-## Example - Health Data <!-- 19 -->
-## Example - Health Data <!-- 20 -->
-## Example - Health Data <!-- 21 -->
-## Example - Health Data <!-- 22 -->
-## Example - Health Data <!-- 23 -->
+## Example - Health Data
+## Example - Health Data
+## Example - Health Data
+## Example - Health Data
+## Example - Health Data
 
-## Conclusion <!-- 24 -->
+## Conclusion
 <!-- 
 Stuff to Include:
   - Furthur reading
   - Summary of useful libraries
 -->
-## Conclusion <!-- 25 -->
-## Conclusion <!-- 26 -->
+## Conclusion
+## Conclusion
 
-## References <!-- 27 -->
+## References
