@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Generalized Additive Models
 
+- Background (brief)
 - Math stuff
 
 ## When to Use & Why
