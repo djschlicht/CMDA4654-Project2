@@ -55,7 +55,17 @@ data("mtcars")
 ## Example - Health Data
 ```{r}
 # df <- read.csv('health_data.csv')
+ # show the data
+```
 
+## Example - Health Data
+```{r}
+# create the model
+```
+
+## Example - Health Data
+```{r}
+# show some graphs or whatever
 ```
 
 ## Conclusions
