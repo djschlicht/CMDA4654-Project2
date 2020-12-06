@@ -55,11 +55,38 @@ $g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{
   - mgcv is more commonly used and better supported
 !['mgcv'](mgcv.png)
 
+## Example - Simulated Data
+\tiny
+```{r}
+library(mgcv)
+set.seed(0)
+sim_data <- gamSim(1, n = 400, dist="normal", scale=2)
+head(sim_data)
+```
+
+## Example - Simulated Data
+\tiny
+```{r}
+fit <- gam(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = sim_data)
+summary(fit)
+```
+
+## Example - Simulated Data
+\tiny
+```{r, fig.height = 4}
+plot(fit, pages=1, residuals=TRUE)
+```
+
+## Example - Simulated Data
+\tiny
+```{r, fig.height=4.5}
+gam.check(fit)
+```
+
 ## Example - mtcars
 <!-- Wrap pred terms in s() for splines with wigglieness controlled by k argument -->
 \tiny
 ```{r}
-library(mgcv)
 data("mtcars")
 mtcars_gam <- 
   gam(mpg ~ s(disp), data = mtcars, method = "REML")
@@ -69,7 +96,6 @@ summary(mtcars_gam)
 ## Example - mtcars 
 \tiny
 ```{r, fig.height=4}
-library(ggplot2)
 ggplot(data = mtcars, aes(x = disp, y = mpg)) +
   theme_bw() + geom_point() +
   geom_smooth(method = "gam", formula = y ~ s(x)) 
@@ -84,6 +110,8 @@ par(mfrow = c(2,2))
 gam.check(mtcars_gam)
 ```
 ## Example - mtcars
+```{r}
+```
 
 ## Example - iris
 \small
