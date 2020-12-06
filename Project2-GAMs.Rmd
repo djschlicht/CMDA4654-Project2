@@ -12,7 +12,15 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, 
+                      comment = NA, # Required
+                      fig.path = "./figures/",  # Store all figures here in relative path (make the folder first)
+                      fig.align = "center",
+                      fig.width = 7,
+                      fig.height = 7,
+                      message = FALSE, # Turn off load messages
+                      warning = FALSE # Turn off warnings
+                      )
 ```
 
 ## Generalized Additive Models <!-- 1 -->
@@ -34,27 +42,51 @@ $g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{
 - Smooth functions can be many different things (polynomials, splines, weighted means, etc)
 
 ## Generalized Additive Models <!-- 3 -->
+
+<!-- When to use and why-->
+
 ## Generalized Additive Models <!-- 4 -->
 ## Generalized Additive Models <!-- 5 -->
 ## Generalized Additive Models <!-- 6 -->
 ## Generalized Additive Models <!-- 7 -->
 ## Generalized Additive Models <!-- 8 -->
 ## Generalized Additive Models <!-- 9 -->
+<!-- How to use it -->
+The main package used for GAMs is mgcv.
+!['mgcv'](mgcv.png)
 
 ## Example - iris <!-- 10 -->
-```{r}
+```{r, include=FALSE}
 library(mgcv)
+library(ggplot2)
+```
+\small
+```{r}
 data("iris")
 ```
+
 ## Example - iris <!-- 11 -->
 ## Example - iris <!-- 12 -->
 ## Example - iris <!-- 13 -->
 
 ## Example - mtcars <!-- 14 -->
+<!-- Wrap pred terms in s() for splines with wigglieness controlled by k argument -->
+\tiny
 ```{r}
 data("mtcars")
+mtcars_gam <- 
+  gam(mpg ~ s(disp), data = mtcars, method = "REML")
+summary(mtcars_gam)
 ```
+
 ## Example - mtcars <!-- 15 -->
+\tiny
+```{r, fig.height=4}
+ggplot(data = mtcars, aes(x = disp, y = mpg)) +
+  theme_bw() + geom_point() +
+  geom_smooth(method = "gam", formula = y ~ s(x))
+```
+
 ## Example - mtcars <!-- 16 -->
 ## Example - mtcars <!-- 17 -->
 
