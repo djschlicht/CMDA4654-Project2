@@ -2,7 +2,11 @@
 title: "CMDA 4654 Project2"
 subtitle: "Generalized Additive Models (GAMs)"
 author: "Group 19: Brady Bolton, Eryk Jesse, Charles Lee, Dan Schlicht"
-output: beamer_presentation
+output: 
+  beamer_presentation:
+    theme: "Frankfurt"
+    colortheme: "beaver"
+    fonttheme: "structurebold"
 ---
 
 ```{r setup, include=FALSE}
