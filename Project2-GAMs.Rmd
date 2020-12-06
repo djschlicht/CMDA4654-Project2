@@ -84,10 +84,17 @@ summary(mtcars_gam)
 ```{r, fig.height=4}
 ggplot(data = mtcars, aes(x = disp, y = mpg)) +
   theme_bw() + geom_point() +
-  geom_smooth(method = "gam", formula = y ~ s(x))
+  geom_smooth(method = "gam", formula = y ~ s(x)) 
 ```
 
 ## Example - mtcars <!-- 16 -->
+\tiny
+```{r, echo=FALSE}
+par(mfrow = c(2,2))
+```
+```{r, fig.height=4.5}
+gam.check(mtcars_gam)
+```
 ## Example - mtcars <!-- 17 -->
 
 ## Example - Health Data <!-- 18 -->
