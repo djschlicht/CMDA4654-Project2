@@ -23,6 +23,8 @@ Stuff to include:
   - When to use
   - Why to use (advantages/disadvantages over other models, etc)
 -->
+!['Gams'](tweet.png)
+
 ## Generalized Additive Models <!-- 2 -->
 ## Generalized Additive Models <!-- 3 -->
 ## Generalized Additive Models <!-- 4 -->
