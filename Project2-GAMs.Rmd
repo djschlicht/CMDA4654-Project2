@@ -23,9 +23,16 @@ Stuff to include:
   - When to use
   - Why to use (advantages/disadvantages over other models, etc)
 -->
-!['Gams'](tweet.png)
+!['GAMs'](tweet.png)
 
 ## Generalized Additive Models <!-- 2 -->
+
+- Type of generalized linear model
+- Response variable depends on smooth functions $f_i(x_i)$
+- General structure of a GAM:
+$g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{n})$
+- Smooth functions can be many different things (polynomials, splines, weighted means, etc)
+
 ## Generalized Additive Models <!-- 3 -->
 ## Generalized Additive Models <!-- 4 -->
 ## Generalized Additive Models <!-- 5 -->
@@ -36,6 +43,7 @@ Stuff to include:
 
 ## Example - iris <!-- 10 -->
 ```{r}
+library(mgcv)
 data("iris")
 ```
 ## Example - iris <!-- 11 -->
