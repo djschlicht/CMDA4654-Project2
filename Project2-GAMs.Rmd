@@ -7,6 +7,8 @@ output:
     theme: "Rochester"
     colortheme: "beaver"
     fonttheme: "structurebold"
+    includes:
+      in_header: preamble.tex
 ---
 
 ```{r setup, include=FALSE}
