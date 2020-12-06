@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       )
 ```
 
-## Generalized Additive Models <!-- 1 -->
+## Generalized Additive Models
 <!--
 Stuff to include:
   - Background/history (1 slide)
@@ -33,7 +33,7 @@ Stuff to include:
 -->
 !['GAMs'](tweet.png)
 
-## Generalized Additive Models <!-- 2 -->
+## Generalized Additive Models
 
 - Type of generalized linear model
 - Response variable depends on smooth functions $f_i(x_i)$
@@ -41,18 +41,18 @@ Stuff to include:
 $g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{n})$
 - Smooth functions can be many different things (polynomials, splines, weighted means, etc)
 
-## Generalized Additive Models <!-- 3 -->
+## Generalized Additive Models
 
 <!-- When to use and why-->
 
-## Generalized Additive Models <!-- 4 -->
-## Generalized Additive Models <!-- 5 -->
-## Generalized Additive Models <!-- 6 -->
-## Generalized Additive Models <!-- 7 -->
-## Generalized Additive Models <!-- 8 -->
-## Generalized Additive Models <!-- 9 -->
-<!-- How to use it -->
-The main package used for GAMs is mgcv.
+## Generalized Additive Models
+## Generalized Additive Models
+## Generalized Additive Models
+## Generalized Additive Models
+## Generalized Additive Models
+## Generalized Additive Models in R
+  - Two options for packages, mgcv and gam
+  - mgcv is more commonly used and better supported
 !['mgcv'](mgcv.png)
 
 ## Example - mtcars
