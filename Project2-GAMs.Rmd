@@ -64,7 +64,7 @@ The spline is formed by weighing the basis function coefficients and summing the
 As in the same case with a polynomial regression of excess "wiggles" not constraining the "Wiggliness"
 in the way that we penalize the fit in to prevent overfitting
 
-**W** or wiggliness is defined by:
+_W_ or wiggliness is defined by:
 $$\int_{\mathbb{R}} [f^{\prime\prime}]^2 dx = \boldsymbol{\beta}^{\mathsf{T}}\mathbf{S}\boldsymbol{\beta} = \large{W}$$
 
 
@@ -79,7 +79,16 @@ $$ \mathcal{L}_p(\boldsymbol{\beta}) = \mathcal{L}(\boldsymbol{\beta}) - \frac{1
 or
 $$\mathcal{L}_p = \log(\text{Likelihood})  - \lambda W$$
 
-## Picking amount of smooth
+## Selecting smooth
+There are multiple methods to choose from the right amount of wiggle, some are:
+AIC, Mallow $\mathcal{C}_p$, Maximum Likelihood(ML), and Restricted Maximum Likelihood(REML).
+The most commonly method is REML for it's numerical stability
+
+There are two ways to optimize the given $\lambda$:
+
+- Predictive: Reducing generalization error
+- Bayesian: Using priors for basis coefficients
+
 ## Maximizing Wiggliness
 ## Generalized Additive Models in R
   - Two options for packages, mgcv and gam
