@@ -52,6 +52,14 @@ where $$\epsilon_i \sim N(0, \sigma^2), y_i \sim \text{Normal}$$
 <!-- When to use and why-->
 
 ## Generalized Additive Models
+A _Spline_ is a function made of up basis functions (the smoothing functions)
+
+These simpler functions form a set of functions called the _basis_
+
+When using a spline for GAMs, each basis function has a coefficient
+
+The spline is formed by weighing the basis function coefficients and summing them at each value of $x$
+
 ## Generalized Additive Models
 ## Generalized Additive Models
 ## Generalized Additive Models
