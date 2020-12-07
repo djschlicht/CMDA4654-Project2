@@ -9,6 +9,7 @@ output:
     fonttheme: "structurebold"
     includes:
       in_header: preamble.tex
+classoption: t
 ---
 
 ```{r setup, include=FALSE}
@@ -96,6 +97,7 @@ summary(mtcars_gam)
 ## Example - mtcars 
 \tiny
 ```{r, fig.height=4}
+library(ggplot2)
 ggplot(data = mtcars, aes(x = disp, y = mpg)) +
   theme_bw() + geom_point() +
   geom_smooth(method = "gam", formula = y ~ s(x)) 
@@ -103,9 +105,6 @@ ggplot(data = mtcars, aes(x = disp, y = mpg)) +
 
 ## Example - mtcars 
 \tiny
-```{r, echo=FALSE}
-par(mfrow = c(2,2))
-```
 ```{r, fig.height=4.5}
 gam.check(mtcars_gam)
 ```
