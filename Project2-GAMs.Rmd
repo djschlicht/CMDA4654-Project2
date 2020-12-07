@@ -48,10 +48,10 @@ $$y_i = \beta_0 +\sum_j { \beta_j x_{ji}} +\epsilon_i$$
 
 GAMs sums the  _smooth functions_
 $$y_i = \beta_0 + \sum_j {s_j(x_{ji})} + \epsilon_i$$
-where $$\epsilon_i \sim N(0, \sigma^2), y_i \sim \text{Normal}$$
+Where $$\epsilon_i \sim N(0, \sigma^2), y_i \sim \text{Normal}$$
 <!-- When to use and why-->
 
-## Generalized Additive Models
+## Splines
 A _Spline_ is a function made of up basis functions (the smoothing functions)
 
 These simpler functions form a set of functions called the _basis_
@@ -60,10 +60,27 @@ When using a spline for GAMs, each basis function has a coefficient
 
 The spline is formed by weighing the basis function coefficients and summing them at each value of $x$
 
-## Generalized Additive Models
-## Generalized Additive Models
-## Generalized Additive Models
-## Generalized Additive Models
+## Wiggliness and Penalized fit
+As in the same case with a polynomial regression of excess "wiggles" not constraining the "Wiggliness"
+in the way that we penalize the fit in to prevent overfitting
+
+**W** or wiggliness is defined by:
+$$\int_{\mathbb{R}} [f^{\prime\prime}]^2 dx = \boldsymbol{\beta}^{\mathsf{T}}\mathbf{S}\boldsymbol{\beta} = \large{W}$$
+
+
+## Constraining Wiggliness
+We have to make wiggliness important by looking into the log-likelihood,
+or the measure of closeness to the data
+
+The term **smoothing operator** $\lambda$ defines the trade-off to find _spline_ coefficients to maximize
+the penalized log-likelihood fit
+
+$$ \mathcal{L}_p(\boldsymbol{\beta}) = \mathcal{L}(\boldsymbol{\beta}) - \frac{1}{2} \lambda\boldsymbol{\beta}^{\mathsf{T}}\mathbf{S}\boldsymbol{\beta}$$
+or
+$$\mathcal{L}_p = \log(\text{Likelihood})  - \lambda W$$
+
+## Picking amount of smooth
+## Maximizing Wiggliness
 ## Generalized Additive Models in R
   - Two options for packages, mgcv and gam
   - mgcv is more commonly used and better supported
