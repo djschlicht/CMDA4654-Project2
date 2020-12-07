@@ -129,8 +129,7 @@ data("iris")
 
 ## Example - Health Data
 ```{r}
-# df <- read.csv('health_data.csv')
- # show the data
+df <- read.csv("estimated_inpatient.csv")
 ```
 ## Example - Health Data
 ## Example - Health Data
