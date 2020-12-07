@@ -43,7 +43,12 @@ $g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{
 - Smooth functions can be many different things (polynomials, splines, weighted means, etc)
 
 ## Generalized Additive Models
+A Linear Model sums the linear terms
+$$y_i = \beta_0 +\sum_j { \beta_j x_{ji}} +\epsilon_i$$
 
+GAMs sums the  _smooth functions_
+$$y_i = \beta_0 + \sum_j {s_j(x_{ji})} + \epsilon_i$$
+where $$\epsilon_i \sim N(0, \sigma^2), y_i \sim \text{Normal}$$
 <!-- When to use and why-->
 
 ## Generalized Additive Models
