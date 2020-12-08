@@ -179,12 +179,25 @@ df <- read.csv("estimated_inpatient.csv")
 ## Example - Health Data
 
 ## Conclusion
+- The benefits of implementing GAMs provides a flexible framework to accurately model nonlinear relationships.
+
+- It's formed from basis functions, which weigh regression functions to form larger functions known as smooths
+
+- To control overfitting, we penalize the fit of the model by adjusting the goodness of fit
+
 <!-- 
 Stuff to Include:
   - Furthur reading
   - Summary of useful libraries
 -->
 ## Conclusion
+
+
 ## Conclusion
 
 ## References
+- https://m-clark.github.io/generalized-additive-models/introduction.html - Clark GAMs Tutorial
+
+- https://fromthebottomoftheheap.net/slides/gam-intro-webinar-2020/gam-intro.html#1 - Simpson Intro to GAMs
+
+- https://www.mrc-bsu.cam.ac.uk/wp-content/uploads/GAM_slides1.pdf - MRC BioStatistics AM & GAMs
