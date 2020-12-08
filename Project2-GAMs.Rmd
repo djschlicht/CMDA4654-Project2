@@ -154,6 +154,7 @@ ggplot(data = mtcars, aes(x = disp, y = mpg)) +
 ```{r, fig.height=4.5}
 gam.check(mtcars_gam)
 ```
+
 ## Example - mtcars
 ```{r}
 ```
@@ -193,7 +194,7 @@ bedOcc$collection_date <- as.Date(bedOcc$collection_date)
 bedOccCW <- bedOcc %>% 
             filter(state == 'CW')
 ggplot(data = bedOccCW, aes(x = collection_date, y = Inpatient.Beds.Occupied.Estimated)) + geom_point() +
-  geom_line(color = "black", size = 1) + 
+  geom_line(color = "black", size = 1) +
   labs(title = 'Bed Occupation by COVID patients in November in the US', x = "Date", y = "Bed Occupation by COVID patient")
 
 ```
@@ -204,7 +205,7 @@ ggplot(data = bedOccCW, aes(x = collection_date, y = Inpatient.Beds.Occupied.Est
 ```{r}
 bedOccVA <- bedOcc %>% 
             filter(state == 'VA')
-p <- ggplot(data = bedOccVA, aes(x = collection_date, y = Inpatient.Beds.Occupied.Estimated)) + geom_point() +
+p <- ggplot(data = bedOccVA, aes(x = collection_date, y = Inpatient.Beds.Occupied.Estimated)) + theme_bw() + geom_point() +
   geom_line(color = "black", size = 1) + 
   labs(title = 'Bed Occupation by COVID patients in November in Virginia', x = "Date", y = "Bed Occupation by COVID patient")
 p
