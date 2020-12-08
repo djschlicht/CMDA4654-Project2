@@ -90,6 +90,13 @@ There are two ways to optimize the given $\lambda$:
 - Bayesian: Using priors for basis coefficients
 
 ## Maximizing Wiggliness
+In a regular regression, the degree of freedom typically equal the predictors in the model. In the case for GAMs,
+we look at the smoothing _basis_ of size $k$ and consider that with **penalized** fitting, their parameters are limited. Thus,
+the models _**effective**_ degrees of freedom (EDF) will not equal the size $k$
+
+The models effective degrees of freedom are given by $\displaystyle \text{trace}(F)$ where F is the EDF matrix
+$$\displaystyle F=(X^{T}WX+\sum _{j}\lambda _{j}S_{j})^{-1}X^{T}WX$$
+
 ## Generalized Additive Models in R
   - Two options for packages, mgcv and gam
   - mgcv is more commonly used and better supported
