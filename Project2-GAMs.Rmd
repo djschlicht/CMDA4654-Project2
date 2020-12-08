@@ -158,16 +158,6 @@ gam.check(mtcars_gam)
 ```{r}
 ```
 
-## Example - iris
-\small
-```{r}
-data("iris")
-```
-
-## Example - iris
-## Example - iris 
-## Example - iris 
-
 ## Example - Health Data
 ```{r}
 df <- read.csv("estimated_inpatient.csv")
