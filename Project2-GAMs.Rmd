@@ -246,8 +246,8 @@ gam.check(gam_fit)
 
 While watching a presentation on GAMs and how they with non-linear data, you might have asked yourself: why use GAMs? Why not just use LOESS (or LOWESS)? Some differences to consider:
 
-- Memory efficiency: LOESS uses O(n^2) memory
-- Runtime efficiency: GAM can be slower
+- Memory efficiency: LOESS uses O(n^2) memory, can be slow
+- Runtime efficiency
 - Both are used by default in geom_smooth
   - Uses LOESS if n =< 1000
   - Uses GAM otherwise
