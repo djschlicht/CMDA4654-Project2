@@ -178,7 +178,7 @@ gam.check(mtcars_gam)
 
 ## Example - Health Data - Explaining Data Set
 
-We will be demonstrating GAMs on heart-rate data from an Ironman Triathlete sleeping as well as subjects practicing Yogi and Chi meditation techniques (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found here:
+We will be demonstrating GAMs on heart-rate data from an Ironman Triathlete sleeping. The original study  also examined the heart-rates of subjects practicing Yogi and Chi meditation techniques (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found here:
 
 https://physionet.org/content/meditation/1.0.0/
 
@@ -190,9 +190,11 @@ We will focus on a small snippet of the non-linear material.
 # Read dataset
 i_df <- read.csv("./i9.csv", header = FALSE)
 colnames(i_df) <- c("time", "hr")
-i_df$time <- i_df$time - 42301.30
-i_df <- i_df[ (i_df$time > 4000),]
-i_df <- i_df[ !(i_df$hr > 80),]
+# Re-index the time
+i_df$time <- i_df$time - (i_df$time[1] + 4000)
+i_df <- i_df[ (i_df$time > 0),]
+# Remove outliers
+i_df <- i_df[ !(i_df$hr > 90),]
 
 p <- ggplot(i_df, aes(x=time, y=hr)) +
   geom_point() +
@@ -200,20 +202,8 @@ p <- ggplot(i_df, aes(x=time, y=hr)) +
        x = "Time", 
        y = "Heart-rate (beats-per-minute)") +
   ylim(45, 75)
-```
 
-
-## Example - Health Data - Yoga meditator
-\tiny
-```{r}
-# Show case for Yoga meditator
-```
-
-
-## Example - Health Data - Chi meditator
-\tiny
-```{r}
-# Show case for Chi meditator
+head(i_df)
 ```
 
 ## Example - Health Data - LM
@@ -275,3 +265,11 @@ Stuff to Include:
 - https://www.mrc-bsu.cam.ac.uk/wp-content/uploads/GAM_slides1.pdf - MRC BioStatistics AM & GAMs
 
 - anson.ucdavis.edu/~jihao/handout5_w15.html - Difference between mgcv and gam packages
+
+## Further Reading
+
+GAM itself can be a very wide and deep topic. The following resources might also be of interest to the viewer:
+
+- *Generalized Additive Models: An Introduction with R* (Simon N. Wood)
+- *Generalized Additive Models* (T.J. Hastie, R.J. Tibshirani)
+- *An Introduction to Statistical Learning: With Applications in R* (Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani)
