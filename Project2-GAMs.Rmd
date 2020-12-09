@@ -276,6 +276,14 @@ Stuff to Include:
 
 - anson.ucdavis.edu/~jihao/handout5_w15.html - Difference between mgcv and gam packages
 
+- https://physionet.org/content/meditation/1.0.0/ - Data used for our Health Example
+
+- https://multithreaded.stitchfix.com/blog/2015/07/30/gam/ - GAM: The Predictive Modeling Silver Bullet by Kim Larson
+
+- http://environmentalcomputing.net/intro-to-gams/ - Generalised additive models (GAMs): an introduction by Environmental Computing 
+
+
+
 ## Further Reading
 
 GAM itself can be a very wide and deep topic. The following resources might also be of interest to the reader:
