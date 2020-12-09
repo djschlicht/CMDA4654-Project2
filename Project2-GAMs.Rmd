@@ -110,7 +110,7 @@ Smooth interactions in R
   
 ## gam.check()
   - A good way to check how well GAM model fits
-  - Usually Guassian by default
+  - Usually Gaussian by default
   - Creates 4 plots
     - Q-Q Plot of Residuals
     - Histogram of Residuals
@@ -119,7 +119,7 @@ Smooth interactions in R
 
 
 
-## Example - Simulated Data
+## Simulated Dataset (Baby Example 1)
 \tiny
 ```{r}
 library(mgcv)
@@ -128,26 +128,26 @@ sim_data <- gamSim(1, n = 400, dist="normal", scale=2)
 head(sim_data)
 ```
 
-## Example - Simulated Data
+## Simulated Dataset using gam()
 \tiny
 ```{r}
 fit <- gam(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = sim_data)
 summary(fit)
 ```
 
-## Example - Simulated Data
+## Simulated Dataset using plot() of GAM fit
 \tiny
 ```{r, fig.height = 4}
 plot(fit, pages=1, residuals=TRUE)
 ```
 
-## Example - Simulated Data
+## Simulated Dataset using gam.check()
 \tiny
 ```{r, fig.height=4.5}
 gam.check(fit)
 ```
 
-## Example - mtcars
+## Mtcars Dataset (Baby Example 2)
 <!-- Wrap pred terms in s() for splines with wigglieness controlled by k argument -->
 \tiny
 ```{r}
@@ -157,7 +157,7 @@ mtcars_gam <-
 summary(mtcars_gam)
 ```
 
-## Example - mtcars 
+## Mtcars Dataset using gam on ggplot
 \tiny
 ```{r, fig.height=4}
 library(ggplot2)
@@ -166,13 +166,13 @@ ggplot(data = mtcars, aes(x = disp, y = mpg)) +
   geom_smooth(method = "gam", formula = y ~ s(x)) 
 ```
 
-## Example - mtcars 
+## Mtcars Dataset using gam.check()
 \tiny
 ```{r, fig.height=4.5}
 gam.check(mtcars_gam)
 ```
 
-## Example - mtcars
+## Mtcars Dataset Slide 4
 ```{r}
 ```
 
