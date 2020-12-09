@@ -119,7 +119,7 @@ Smooth interactions in R
 
 
 
-## Simulated Dataset (Baby Example 1)
+## Simulated Data (Baby Example 1)
 \tiny
 ```{r}
 library(mgcv)
@@ -128,26 +128,26 @@ sim_data <- gamSim(1, n = 400, dist="normal", scale=2)
 head(sim_data)
 ```
 
-## Simulated Dataset using gam()
+## Simulated Data using gam()
 \tiny
 ```{r}
 fit <- gam(y ~ s(x0) + s(x1) + s(x2) + s(x3), data = sim_data)
 summary(fit)
 ```
 
-## Simulated Dataset using plot() of GAM fit
+## Simulated Data using plot() of GAM fit
 \tiny
 ```{r, fig.height = 4}
 plot(fit, pages=1, residuals=TRUE)
 ```
 
-## Simulated Dataset using gam.check()
+## Simulated Data using gam.check()
 \tiny
 ```{r, fig.height=4.5}
 gam.check(fit)
 ```
 
-## Mtcars Dataset (Baby Example 2)
+## Mtcars Data (Baby Example 2)
 <!-- Wrap pred terms in s() for splines with wigglieness controlled by k argument -->
 \tiny
 ```{r}
@@ -157,7 +157,7 @@ mtcars_gam <-
 summary(mtcars_gam)
 ```
 
-## Mtcars Dataset using gam on ggplot
+## Mtcars Data using GAM on ggplot
 \tiny
 ```{r, fig.height=4}
 library(ggplot2)
@@ -166,13 +166,13 @@ ggplot(data = mtcars, aes(x = disp, y = mpg)) +
   geom_smooth(method = "gam", formula = y ~ s(x)) 
 ```
 
-## Mtcars Dataset using gam.check()
+## Mtcars Data using gam.check()
 \tiny
 ```{r, fig.height=4.5}
 gam.check(mtcars_gam)
 ```
 
-## Example - Health Data - Explaining Data Set
+## Health Data - Explaining Data Set
 
 We will be demonstrating GAMs on heart-rate data from an Ironman Triathlete sleeping. The original study  also examined the heart-rates of subjects practicing Yogi and Chi meditation techniques (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found here:
 
@@ -180,7 +180,7 @@ https://physionet.org/content/meditation/1.0.0/
 
 We will focus on a small snippet of the non-linear material.
 
-## Example - Health Data - Data Cleaning
+## Health Data - Data Cleaning
 \tiny
 ```{r, fig.height=3.5}
 # Read dataset
@@ -203,14 +203,14 @@ p <- ggplot(i_df, aes(x=time, y=hr)) +
 head(i_df)
 ```
 
-## Example - Health Data - LM
+## Health Data - LM
 \tiny
 ```{r, fig.height=3.5}
 # Linear Model Fit (uses formula = y~x)
 p + geom_smooth(method = 'lm', se=FALSE, color = 'blue')
 ```
 
-## Example - Health Data - Splines
+## Health Data - Splines
 \tiny
 
 ```{r, fig.height=3.5}
@@ -228,14 +228,14 @@ p + stat_smooth(method = "loess", se = FALSE, span = 0.1,
 ```
 -->
 
-## Example - Health Data - GAM
+## Health Data - GAM
 \tiny
 ```{r, fig.height=3.5}
 # GAM Model Fit (formula = y ~ s(x, bs = "cs"))
 p + geom_smooth(method = 'gam', se=FALSE, color = 'red')
 ```
 
-## Example - GAM diagnostics
+## Health Data - GAM diagnostics
 \tiny
 ```{r, fig.height=4.5}
 gam_fit <- gam(hr ~ s(time), data = i_df, method = "REML")
