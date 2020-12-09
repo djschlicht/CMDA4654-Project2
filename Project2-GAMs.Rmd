@@ -34,7 +34,7 @@ Stuff to include:
 -->
 !['GAMs'](tweet.png)
 
-## Generalized Additive Models
+## Summation of Smooth
 
 - Type of generalized linear model
 - Response variable depends on smooth functions $f_i(x_i)$
@@ -62,7 +62,7 @@ The spline is formed by weighing the basis function coefficients and summing the
 
 ## Wiggliness and Penalized fit
 As in the same case with a polynomial regression of excess "wiggles" not constraining the "Wiggliness"
-in the way that we penalize the fit in to prevent overfitting
+in the way that we penalize the fit in order to prevent overfitting
 
 _W_ or wiggliness is defined by:
 $$\int_{\mathbb{R}} [f^{\prime\prime}]^2 dx = \boldsymbol{\beta}^{\mathsf{T}}\mathbf{S}\boldsymbol{\beta} = \large{W}$$
@@ -100,7 +100,13 @@ $$\displaystyle F=(X^{T}WX+\sum _{j}\lambda _{j}S_{j})^{-1}X^{T}WX$$
 ## Generalized Additive Models in R
   - Two options for packages, mgcv and gam
   - mgcv is more commonly used and better supported
-!['mgcv'](mgcv.png)
+  
+Smooth interactions in R
+
+1. Bivariate
+  - s(x, z, bs = 'tp')
+2. Tensor products
+  - te(x, z)
 
 ## Example - Simulated Data
 \tiny
@@ -253,10 +259,6 @@ Stuff to Include:
   - Furthur reading
   - Summary of useful libraries
 -->
-## Conclusion
-
-
-## Conclusion
 
 ## References
 - https://m-clark.github.io/generalized-additive-models/introduction.html - Clark GAMs Tutorial
