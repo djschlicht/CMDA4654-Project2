@@ -178,14 +178,15 @@ gam.check(mtcars_gam)
 
 ## Example - Health Data - Explaining Data Set
 
-We will be demonstrating GAMs on heart-rate data from a subject training for the Ironman Triathlon in a sleep study (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found [here](https://physionet.org/content/meditation/1.0.0/). We will focus on a small snippet of the non-linear material.
+We will be demonstrating GAMs on heart-rate data from an Ironman Triathlete sleeping as well as subjects practicing Yogi and Chi meditation techniques (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found here:
+
+https://physionet.org/content/meditation/1.0.0/
+
+We will focus on a small snippet of the non-linear material.
 
 ## Example - Health Data - Data Cleaning
 \tiny
 ```{r, fig.height=3.5}
-library(ggplot2)
-library(dplyr)
-
 # Read dataset
 i_df <- read.csv("./i9.csv", header = FALSE)
 colnames(i_df) <- c("time", "hr")
@@ -227,8 +228,7 @@ p + geom_smooth(method = 'lm', se=FALSE, color = 'blue')
 p + geom_smooth(method = 'lm', formula = y~splines::bs(x,3), se=FALSE, color = 'blue')
 ```
 
-
-
+<!--
 ## Example - Health Data - Loess
 \tiny
 ```{r, fig.height=3.5}
@@ -236,12 +236,20 @@ p + geom_smooth(method = 'lm', formula = y~splines::bs(x,3), se=FALSE, color = '
 p + stat_smooth(method = "loess", se = FALSE, span = 0.1,
                 method.args = list(degree = 2), color = "blue", size = 1)
 ```
+-->
 
 ## Example - Health Data - GAM
 \tiny
 ```{r, fig.height=3.5}
 # GAM Model Fit (formula = y ~ s(x, bs = "cs"))
 p + geom_smooth(method = 'gam', se=FALSE, color = 'red')
+```
+
+## Example - GAM diagnostics
+\tiny
+```{r, fig.height=4.5}
+gam_fit <- gam(hr ~ s(time), data = i_df, method = "REML")
+gam.check(gam_fit)
 ```
 
 ## Conclusion
