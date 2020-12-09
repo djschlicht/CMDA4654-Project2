@@ -166,26 +166,28 @@ gam.check(mtcars_gam)
 ```
 
 ## Example - Health Data - Explaining Data Set
-\tiny
+
 We will be demonstrating GAMs on heart-rate data from a subject training for the Ironman Triathlon in a sleep study (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found [here](https://physionet.org/content/meditation/1.0.0/). We will focus on a small snippet of the non-linear material.
 
 ## Example - Health Data - Data Cleaning
 \tiny
-```{r}
+```{r, fig.height=3.5}
 library(ggplot2)
 library(dplyr)
 
 # Read dataset
 i_df <- read.csv("./i9.csv", header = FALSE)
 colnames(i_df) <- c("time", "hr")
+i_df$time <- i_df$time - 42301.30
 i_df <- i_df[ (i_df$time > 4000),]
 i_df <- i_df[ !(i_df$hr > 80),]
-i_df$time <- i_df$time - i_df$time[1]
+
 p <- ggplot(i_df, aes(x=time, y=hr)) +
   geom_point() +
   labs(title = 'Heart-rate study of Ironman Triathlete',
        x = "Time", 
-       y = "Heart-rate (beats-per-minute)")
+       y = "Heart-rate (beats-per-minute)") +
+  ylim(45, 75)
 ```
 
 
@@ -204,12 +206,12 @@ p <- ggplot(i_df, aes(x=time, y=hr)) +
 
 ## Example - Health Data - LM
 \tiny
-```{r}
+```{r, fig.height=3.5}
 # Linear Model Fit (uses formula = y~x)
 p + geom_smooth(method = 'lm', se=FALSE, color = 'blue')
 ```
 
-```{r}
+```{r, fig.height=3.5}
 # Model Fit adjusting splines
 p + geom_smooth(method = 'lm', formula = y~splines::bs(x,3), se=FALSE, color = 'blue')
 ```
@@ -218,20 +220,15 @@ p + geom_smooth(method = 'lm', formula = y~splines::bs(x,3), se=FALSE, color = '
 
 ## Example - Health Data - Loess
 \tiny
-```{r}
+```{r, fig.height=3.5}
 # Loess Model Fit 
-p + stat_smooth(method = "loess", 
-                se = FALSE,
-                span = 0.1,
-                # formula = y ~ poly(x, degree),
-                method.args = list(degree = 2),
-                color = "blue",
-                size = 1)
+p + stat_smooth(method = "loess", se = FALSE, span = 0.1,
+                method.args = list(degree = 2), color = "blue", size = 1)
 ```
 
 ## Example - Health Data - GAM
 \tiny
-```{r}
+```{r, fig.height=3.5}
 # GAM Model Fit (formula = y ~ s(x, bs = "cs"))
 p + geom_smooth(method = 'gam', se=FALSE, color = 'red')
 ```
