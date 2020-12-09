@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       )
 ```
 
-## Generalized Additive Models and we use them
+## Generalized Additive Models and why we use them
 
 - Type of generalized linear model
 
@@ -187,17 +187,18 @@ We will focus on a small snippet of the non-linear material.
 i_df <- read.csv("./i9.csv", header = FALSE)
 colnames(i_df) <- c("time", "hr")
 # Re-index the time
-i_df$time <- i_df$time - (i_df$time[1] + 4000)
-i_df <- i_df[ (i_df$time > 0),]
+i_df$time <- i_df$time - 42301.30
+i_df <- i_df[ !(i_df$time > 425),]
 # Remove outliers
-i_df <- i_df[ !(i_df$hr > 90),]
+i_df <- i_df[ !(i_df$hr > 80),]
 
+# Create scatter-plot
 p <- ggplot(i_df, aes(x=time, y=hr)) +
   geom_point() +
   labs(title = 'Heart-rate study of Ironman Triathlete',
        x = "Time", 
        y = "Heart-rate (beats-per-minute)") +
-  ylim(45, 75)
+  ylim(50, 65)
 
 head(i_df)
 ```
@@ -209,8 +210,6 @@ head(i_df)
 p + geom_smooth(method = 'lm', se=FALSE, color = 'blue')
 ```
 
-<!--
-
 ## Example - Health Data - Splines
 \tiny
 
@@ -219,6 +218,7 @@ p + geom_smooth(method = 'lm', se=FALSE, color = 'blue')
 p + geom_smooth(method = 'lm', formula = y~splines::bs(x,3), se=FALSE, color = 'blue')
 ```
 
+<!--
 ## Example - Health Data - Loess
 \tiny
 ```{r, fig.height=3.5}
@@ -242,6 +242,16 @@ gam_fit <- gam(hr ~ s(time), data = i_df, method = "REML")
 gam.check(gam_fit)
 ```
 
+## LOESS vs. GAM
+
+While watching a presentation on GAMs and how they with non-linear data, you might have asked yourself: why use GAMs? Why not just use LOESS (or LOWESS)? Some differences to consider:
+
+- Memory efficiency: LOESS uses O(n^2) memory
+- Runtime efficiency: GAM can be slower
+- Both are used by default in geom_smooth
+  - Uses LOESS if n < 1000
+  - Uses GAM otherwise
+
 ## Conclusion
 - The benefits of implementing GAMs provides a flexible framework to accurately model nonlinear relationships.
 
@@ -254,7 +264,7 @@ Stuff to Include:
   - Furthur reading
   - Summary of useful libraries
 -->
-## Conclusion
+## Fun Reminder
 !['GAMs'](tweet.png)
 
 ## References
