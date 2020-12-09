@@ -25,6 +25,15 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 ## Generalized Additive Models
+
+- Type of generalized linear model
+
+- Response variable depends on smooth functions $f_i(x_i)$
+
+- General structure of a GAM:
+$$g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{n})$$
+
+- Smooth functions can be many different things (polynomials, splines, weighted means, etc)
 <!--
 Stuff to include:
   - Background/history (1 slide)
@@ -32,15 +41,6 @@ Stuff to include:
   - When to use
   - Why to use (advantages/disadvantages over other models, etc)
 -->
-!['GAMs'](tweet.png)
-
-## Summary of GAMs
-
-- Type of generalized linear model
-- Response variable depends on smooth functions $f_i(x_i)$
-- General structure of a GAM:
-$g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{n})$
-- Smooth functions can be many different things (polynomials, splines, weighted means, etc)
 
 ## Summations
 A Linear Model sums the linear terms
@@ -103,9 +103,9 @@ $$\displaystyle F=(X^{T}WX+\sum _{j}\lambda _{j}S_{j})^{-1}X^{T}WX$$
   
 Smooth interactions in R
 
-1. Bivariate
+1. Bivariate smoothing
   - s(x, z, bs = 'tp')
-2. Tensor products
+2. Tensor products smoothing
   - te(x, z)
 
 ## Example - Simulated Data
@@ -259,6 +259,8 @@ Stuff to Include:
   - Furthur reading
   - Summary of useful libraries
 -->
+## Conclusion
+!['GAMs'](tweet.png)
 
 ## References
 - https://m-clark.github.io/generalized-additive-models/introduction.html - Clark GAMs Tutorial
