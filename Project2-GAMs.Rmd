@@ -172,10 +172,6 @@ ggplot(data = mtcars, aes(x = disp, y = mpg)) +
 gam.check(mtcars_gam)
 ```
 
-## Mtcars Dataset Slide 4
-```{r}
-```
-
 ## Example - Health Data - Explaining Data Set
 
 We will be demonstrating GAMs on heart-rate data from an Ironman Triathlete sleeping. The original study  also examined the heart-rates of subjects practicing Yogi and Chi meditation techniques (taken from a paper titled "Heart Rate Oscillations during Meditation"). More info including the source material can be found here:
@@ -213,12 +209,16 @@ head(i_df)
 p + geom_smooth(method = 'lm', se=FALSE, color = 'blue')
 ```
 
+<!--
+
+## Example - Health Data - Splines
+\tiny
+
 ```{r, fig.height=3.5}
 # Model Fit adjusting splines
 p + geom_smooth(method = 'lm', formula = y~splines::bs(x,3), se=FALSE, color = 'blue')
 ```
 
-<!--
 ## Example - Health Data - Loess
 \tiny
 ```{r, fig.height=3.5}
@@ -268,7 +268,7 @@ Stuff to Include:
 
 ## Further Reading
 
-GAM itself can be a very wide and deep topic. The following resources might also be of interest to the viewer:
+GAM itself can be a very wide and deep topic. The following resources might also be of interest to the reader:
 
 - *Generalized Additive Models: An Introduction with R* (Simon N. Wood)
 - *Generalized Additive Models* (T.J. Hastie, R.J. Tibshirani)
