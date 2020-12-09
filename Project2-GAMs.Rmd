@@ -107,6 +107,17 @@ Smooth interactions in R
   - s(x, z, bs = 'tp')
 2. Tensor products smoothing
   - te(x, z)
+  
+## gam.check()
+  - A good way to check how well GAM model fits
+  - Usually Guassian by default
+  - Creates 4 plots
+    - Q-Q Plot of Residuals
+    - Histogram of Residuals
+    - Residual vs Linear Predictor Plot
+    - Observed vs. fitted values
+
+
 
 ## Example - Simulated Data
 \tiny
@@ -254,3 +265,5 @@ Stuff to Include:
 - https://fromthebottomoftheheap.net/slides/gam-intro-webinar-2020/gam-intro.html#1 - Simpson Intro to GAMs
 
 - https://www.mrc-bsu.cam.ac.uk/wp-content/uploads/GAM_slides1.pdf - MRC BioStatistics AM & GAMs
+
+- anson.ucdavis.edu/~jihao/handout5_w15.html - Difference between mgcv and gam packages
