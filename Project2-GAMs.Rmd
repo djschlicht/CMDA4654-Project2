@@ -237,7 +237,7 @@ p + geom_smooth(method = 'gam', se=FALSE, color = 'red')
 
 ## Health Data - GAM diagnostics
 \tiny
-```{r, fig.height=4.5}
+```{r, fig.height=4.25}
 gam_fit <- gam(hr ~ s(time), data = i_df, method = "REML")
 gam.check(gam_fit)
 ```
@@ -249,7 +249,7 @@ While watching a presentation on GAMs and how they with non-linear data, you mig
 - Memory efficiency: LOESS uses O(n^2) memory
 - Runtime efficiency: GAM can be slower
 - Both are used by default in geom_smooth
-  - Uses LOESS if n < 1000
+  - Uses LOESS if n =< 1000
   - Uses GAM otherwise
 
 ## Conclusion
