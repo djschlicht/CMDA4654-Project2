@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       )
 ```
 
-## Generalized Additive Models
+## Generalized Additive Models and we use them
 
 - Type of generalized linear model
 
