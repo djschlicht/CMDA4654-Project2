@@ -34,7 +34,7 @@ Stuff to include:
 -->
 !['GAMs'](tweet.png)
 
-## Summation of Smooth
+## Summary of GAMs
 
 - Type of generalized linear model
 - Response variable depends on smooth functions $f_i(x_i)$
@@ -42,7 +42,7 @@ Stuff to include:
 $g(\operatorname {E} (Y))=\beta _{0}+f_{1}(x_{1})+f_{2}(x_{2})+\cdots +f_{n}(x_{n})$
 - Smooth functions can be many different things (polynomials, splines, weighted means, etc)
 
-## Generalized Additive Models
+## Summations
 A Linear Model sums the linear terms
 $$y_i = \beta_0 +\sum_j { \beta_j x_{ji}} +\epsilon_i$$
 
