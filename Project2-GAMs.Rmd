@@ -267,6 +267,14 @@ Stuff to Include:
 ## Fun Reminder
 !['GAMs'](tweet.png)
 
+## Further Reading
+
+GAM itself can be a very wide and deep topic. The following resources might also be of interest to the reader:
+
+- *Generalized Additive Models: An Introduction with R* (Simon N. Wood)
+- *Generalized Additive Models* (T.J. Hastie, R.J. Tibshirani)
+- *An Introduction to Statistical Learning: With Applications in R* (Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani)
+
 ## References
 - https://m-clark.github.io/generalized-additive-models/introduction.html - Clark GAMs Tutorial
 
@@ -281,13 +289,3 @@ Stuff to Include:
 - https://multithreaded.stitchfix.com/blog/2015/07/30/gam/ - GAM: The Predictive Modeling Silver Bullet by Kim Larson
 
 - http://environmentalcomputing.net/intro-to-gams/ - Generalised additive models (GAMs): an introduction by Environmental Computing 
-
-
-
-## Further Reading
-
-GAM itself can be a very wide and deep topic. The following resources might also be of interest to the reader:
-
-- *Generalized Additive Models: An Introduction with R* (Simon N. Wood)
-- *Generalized Additive Models* (T.J. Hastie, R.J. Tibshirani)
-- *An Introduction to Statistical Learning: With Applications in R* (Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani)
